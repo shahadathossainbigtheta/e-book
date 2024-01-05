@@ -1,0 +1,19 @@
+<div class="container">
+  <form>
+    <div class="row">
+      <div class="col-6">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="newBook.name">
+      </div>
+      <div class="col-6">
+        <label for="price" class="form-label">Price</label>
+        <input type="text" class="form-control" id="price" name="price" [(ngModel)]="newBook.price">
+      </div>
+      <div class="col-12">
+        <label for="description" class="form-label">Description</label>
+        <input type="text" class="form-control" id="description" name="description" [(ngModel)]="newBook.description">
+      </div>
+    </div>
+    <button (click)="saveBook()" class="btn btn-primary">Submit</button>
+  </form>
+</div>

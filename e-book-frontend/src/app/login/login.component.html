@@ -1,0 +1,42 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="card w-75">
+        <div class="card-header bg-secondary text-white">
+          Login
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="username" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="username" name="username" [(ngModel)]="users.username">
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="password" name="password" [(ngModel)]="users.password">
+                </div>
+              </div>
+
+            </div>
+
+            <button *ngIf="!isLoading" (click)="loginUser()" class="btn btn-primary">Login</button>
+            <button *ngIf="isLoading" class="btn btn-primary" type="button" disabled>
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              Loading...
+            </button>
+          </form>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

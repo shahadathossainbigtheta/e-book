@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div *ngIf="users?.authStatus==='AUTH'" class="logout-container p-3">
+    <button [routerLink]="['/add-book']" class="btn btn-primary" style="margin-right: 5px">NEW BOOK</button>
+    <button (click)="logout()" class="btn btn-danger">Logout</button>
+  </div>
+
+  <div class="row">
+    <div class="col-3" *ngFor="let book of bookList">
+      <div class="card mr-3 mt-3" style="width: 18rem;">
+        <a [routerLink]="['/book-details', book.id]" class="text-decoration-none">
+          <div class="card-body">
+            <h5 class="card-title">{{book.name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{book.price}}</h6>
+            <p class="card-text">{{book.description}}</p>
+          </div>
+        </a>
+        <div class="card-footer">
+          <button [routerLink]="['/book-edit', book.id]" class="btn btn-primary" style="margin-right: 5px">Edit</button>
+          <button (click)="deleteById(book.id)" class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
